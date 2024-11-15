@@ -1,20 +1,20 @@
 # Port-Sentinel-AI
 
 ![Port-Sentinel-AI](https://img.shields.io/badge/AI-Cyber%20Security-blue)
-![Azure](https://img.shields.io/badge/Azure-Cloud-blue)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-brightgreen)
 
 ## Descripción
 
-**Port-Sentinel-AI** es una herramienta avanzada de ciberseguridad que utiliza inteligencia artificial para escanear y proteger los puertos abiertos en tu equipo local y en tu router. Con la integración de modelos LLM como GPT-4o mini de Azure, **Port-Sentinel-AI** no solo detecta puertos inseguros, sino que también proporciona recomendaciones detalladas y guías paso a paso para cerrar estos puertos y proteger tu sistema contra accesos no autorizados.
+**Port Sentinel AI** es una herramienta de ciberseguridad para macOS que permite escanear y proteger los puertos abiertos en tu equipo local y router. La herramienta no solo detecta puertos inseguros, sino que también proporciona la capacidad de cerrarlos automáticamente y ofrece recomendaciones de seguridad específicas para cada puerto vulnerable detectado.
 
 ## Características
 
-- **Escaneo de Puertos**: Detecta puertos abiertos en tu equipo local y en tu router.
-- **Identificación de Puertos Inseguros**: Reconoce puertos comúnmente vulnerables y proporciona alertas.
-- **Recomendaciones de Seguridad**: Utiliza AI para generar recomendaciones personalizadas sobre cómo cerrar puertos inseguros.
-- **Guías Paso a Paso**: Ofrece instrucciones detalladas para proteger tu equipo.
-- **Integración con Azure**: Aprovecha la potencia de los modelos LLM de Azure para análisis y recomendaciones.
+- **Escaneo Dual**: Detecta simultáneamente puertos abiertos en el equipo local y router
+- **Detección de Vulnerabilidades**: Identifica 12 tipos diferentes de puertos inseguros comunes
+- **Gestión Automatizada**: Cierre automático de puertos inseguros con privilegios de superusuario
+- **Interfaz Amigable**: Mensajes con código de colores para mejor visualización de alertas
+- **Compatibilidad macOS**: Comandos específicos para gestión de servicios en macOS
+- **Ejecución Paralela**: Utiliza multithreading para escaneo rápido de puertos
 
 ## Instalación
 
@@ -36,7 +36,7 @@
 1. Ejecuta el script:
 
    ```sh
-   python scan.py
+   sudo python scan.py
    ```
 
 2. Sigue las instrucciones en pantalla para ver los puertos abiertos y recibir recomendaciones de seguridad.
@@ -48,14 +48,38 @@ Escaneando puertos abiertos en el router: 192.168.1.1
 
 Puertos abiertos encontrados en el router:
 Puerto 80 (http) está abierto en el router.
+
+¡ALERTAS DE SEGURIDAD para router!
 El puerto 80 es inseguro (HTTP). Se recomienda cerrarlo o asegurar su uso.
 
 Escaneando puertos abiertos en el equipo local: 192.168.1.2
 
 Puertos abiertos encontrados en el equipo local:
 Puerto 445 (microsoft-ds) está abierto en el equipo local.
+
+¡ALERTAS DE SEGURIDAD para equipo local!
 El puerto 445 es inseguro (Microsoft-DS SMB file sharing). Se recomienda cerrarlo o asegurar su uso.
+
+Se detectaron los siguientes puertos inseguros:
+Puerto 445: SMB - Deshabilitar compartición SMB
+
+¿Desea cerrar estos puertos? (s/N):
 ```
+
+## Puertos Monitoreados
+
+El script monitorea los siguientes puertos inseguros:
+
+20, 21 (FTP)
+23 (Telnet)
+25 (SMTP)
+69 (TFTP)
+80 (HTTP)
+110 (POP3)
+143 (IMAP)
+445 (SMB)
+3389 (Remote Desktop)
+5800, 5900 (VNC)
 
 ## Contribución
 
@@ -98,9 +122,8 @@ Agradecemos a la comunidad de desarrolladores y a las empresas que apoyan proyec
 
 ## Referencias
 
-- [Azure AI Services](https://azure.microsoft.com/en-us/services/cognitive-services/)
-- [Puertos TCP y UDP](https://es.wikipedia.org/wiki/Modelo_TCP/IP)
-- [Ciberseguridad](https://es.wikipedia.org/wiki/Ciberseguridad)
-- [Protección de Datos](https://es.wikipedia.org/wiki/Protecci%C3%B3n_de_datos)
-- [Inteligencia Artificial](https://es.wikipedia.org/wiki/Inteligencia_artificial)
-- [Escaneo de Puertos](https://es.wikipedia.org/wiki/Esc%C3%A1ner_de_puertos)
+- <a href="https://es.wikipedia.org/wiki/Modelo_TCP/IP" target="_blank" rel="noopener noreferrer">Puertos TCP y UDP</a>
+- <a href="https://es.wikipedia.org/wiki/Ciberseguridad" target="_blank" rel="noopener noreferrer">Ciberseguridad</a>
+- <a href="https://es.wikipedia.org/wiki/Protecci%C3%B3n_de_datos" target="_blank" rel="noopener noreferrer">Protección de Datos</a>
+- <a href="https://es.wikipedia.org/wiki/Inteligencia_artificial" target="_blank" rel="noopener noreferrer">Inteligencia Artificial</a>
+- <a href="https://es.wikipedia.org/wiki/Esc%C3%A1ner_de_puertos" target="_blank" rel="noopener noreferrer">Escaneo de Puertos</a>
